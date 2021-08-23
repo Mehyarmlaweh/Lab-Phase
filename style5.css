@@ -96,6 +96,11 @@ header li a:hover {
 
 }
 
+.form-control1 {
+    width: 150rem;
+
+}
+
 .banner-text h3 {
     color: #fff;
     font-size: 90px;
@@ -105,17 +110,27 @@ header li a:hover {
 
 .form1 {
     position: absolute;
-    top: 60rem;
+    top: 70rem;
     right: 46.5rem;
     text-align: center;
     align-items: center;
     font-size: x-large;
     margin-bottom: 4rem;
     margin-right: auto;
-    display: inline-block;
+    display: block;
 
 }
 
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group input,
+.form-group select {
+    width: 300px;
+    justify-self: center;
+}
 
 /* footer */
 .Contact h1 {

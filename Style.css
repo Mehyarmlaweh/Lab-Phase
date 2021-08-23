@@ -226,14 +226,23 @@ header li a:hover {
 
 }
 
-@media(max-width : 600px) {
-    .container-1 {
-        display: none;
+@media screen and (max-width : 800px) {
+    .img-1 {
+        grid-row-start: 1;
+        background-color: teal;
     }
 
-    .container-2 {
-        display: none;
+    .img-2 {
+        grid-row-start: 2;
+
     }
+
+    .img-3 {
+        grid-row-start: 3;
+
+    }
+
+
 
 }
 
@@ -252,6 +261,13 @@ header li a:hover {
     padding: 10px;
     box-shadow: 5px 5px red;
 
+}
+
+.img-1:hover,
+.img-2:hover,
+.img-3:hover,
+.img-4:hover {
+    background-color: rgba(255, 255, 255, 0.788);
 }
 
 .img-1 img,
@@ -372,13 +388,17 @@ header li a:hover {
     background-repeat: no-repeat;
     background-image: url("./ressources/contact.png");
     padding-top: 5%;
+    justify-content: space-between;
 
 
 }
 
 .container-31 {
     width: 74.5%;
+
 }
+
+
 
 .container-32 {
     position: relative;
@@ -545,4 +565,11 @@ input[type=submit]:hover {
 .page-4 li :hover,
 .page-5 li :hover {
     color: rgba(255, 255, 255, 0.596)
+}
+
+
+@media only screen and (min-width: 2000px) {
+    html {
+        zoom: 1;
+    }
 }
