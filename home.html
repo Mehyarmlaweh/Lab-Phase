@@ -168,10 +168,10 @@ In the towns and suburbs, taxis with meters and buses are the most common form o
      <div class="container-3">
      <div class="container-31">
     
-  <form action="action_page">
+  <form id="contactform" action="action_page">
     <div class="row">
       <div class="col-25">
-        <label for="fname">First Name</label>
+        <label  for="fname">First Name</label>
       </div>
       <div class="col-75">
         <input type="text" id="fname" name="firstname" placeholder="Your name..">
@@ -508,7 +508,23 @@ In the towns and suburbs, taxis with meters and buses are the most common form o
   </footer>
 
 
-                 
+             <script>
+                 var fname = document.getElementById("fname");
+      var subject = document.getElementById("subject");
+       var contactform = document.getElementById("contactform");
+                contactform.addEventListener("submit", (e) => {
+          e.preventDefault();
+
+        if (fname.value == "") {
+          alert("Write Your name !");
+        }
+        if (subject.value.length < 10) {
+          alert("Write a valid Message ! ");
+        } else {
+          alert("your message has been sent");
+        }
+      });
+             </script>    
 
   </body>
 </html>

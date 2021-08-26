@@ -7,6 +7,7 @@
       href="https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Tunisia.svg"
     />
     <link rel="stylesheet" href="./css/bootstrap.css" />
+<script type="text/javascript" src="./Scripts/PlacesToGo.js"></script>
 
     <script
       src="https://kit.fontawesome.com/c8e4d183c2.js"
@@ -39,20 +40,19 @@
       </nav>
       <div class="carousel">
         <div class="carousel__item carousel__item--visible">
-          <img src="./ressources/Carousel/3.jpg" />
+          <img class ="image" src="./ressources/Carousel/3.jpg" width="500px"/>
+          <img class ="image" src="./ressources/Carousel/1.jpg" width="500px"/>
+          <img class ="image" src="./ressources/Carousel/2.jpg"width="500px" />
+          <img class ="image" src="./ressources/Carousel/4.jpg" width="500px"/>
+
         </div>
-        <div class="carousel__item">
-          <img src="./ressources/Carousel/2.jpg" />
-        </div>
-        <div class="carousel__item">
-          <img src="./ressources/Carousel/1.jpg" />
-        </div>
+       
 
         <div class="carousel__actions">
-          <button id="carousel__button--prev" aria-label="Previous slide">
+          <button onclick="plusDivs(-1)" id="carousel__button--prev" aria-label="Previous slide">
             <img src="./ressources/arrow-left-circle.svg" />
           </button>
-          <button id="carousel__button--next" aria-label="Next slide">
+          <button onclick="plusDivs(1)" id="carousel__button--next" aria-label="Next slide">
             <img src="./ressources/arrow-right-circle.svg" />
           </button>
         </div>
@@ -345,7 +345,7 @@
      <div class="container-3">
      <div class="container-31">
     
-  <form action="action_page">
+  <form id="contactform" action="action_page">
     <div class="row">
       <div class="col-25">
         <label for="fname">First Name</label>
@@ -683,6 +683,44 @@
      </div>
     </div>
   </footer>
+  <script>
+        var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("image");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+   
+                 var fname = document.getElementById("fname");
+      var subject = document.getElementById("subject");
+       var contactform = document.getElementById("contactform");
+                contactform.addEventListener("submit", (e) => {
+          e.preventDefault();
+
+        if (fname.value == "") {
+          alert("Write Your name !");
+        }
+        if (subject.value.length < 10) {
+          alert("Write a valid Message ! ");
+        } else {
+          alert("your message has been sent");
+        }
+      });
+                
+</script>
+
   </body>
+
   
 </html>

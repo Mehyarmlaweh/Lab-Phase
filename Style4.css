@@ -108,6 +108,16 @@ header li a:hover {
     background-color: #fff;
 }
 
+.alert {
+    font-size: 18pt;
+    position: absolute;
+    top: 115%;
+    left: 34%;
+    color: red;
+    font-weight: 700;
+}
+
+
 #Submit {
     text-decoration: none;
     font-size: x-large;
@@ -117,7 +127,7 @@ header li a:hover {
     left: 33%;
     top: 310px;
     border-radius: 5px;
-    color: red;
+
     font-weight: 600;
 
 

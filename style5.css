@@ -96,10 +96,14 @@ header li a:hover {
 
 }
 
-.form-control1 {
-    width: 150rem;
-
+.alert {
+    text-align: start;
+    font-size: 12pt;
+    color: red;
+    font-weight: 600;
 }
+
+
 
 .banner-text h3 {
     color: #fff;
@@ -338,4 +342,11 @@ input[type=submit]:hover {
 
 footer {
     padding-top: 100%;
+}
+
+.alert-2 {
+    text-align: start;
+    font-size: 12pt;
+    color: red;
+    font-weight: 600;
 }

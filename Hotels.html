@@ -63,7 +63,7 @@
         <h3>
           Enter your dates and choose from 1943 hotels and other accommodations!
         </h3>
-        <div class="Search">
+        <div id="search" class="Search">
           <select id="List-countries">
             <option label="Where do you want to go?"></option>
             <option value="Hammamet Nord">Hammamet Nord</option>
@@ -76,15 +76,16 @@
             <option value="Tunis">Tunis</option>
             <option value="Tozeur">Tozeur</option>
           </select>
-          <input type="date" class="Checkin" />
-          <input type="date" class="Checkout" />
+          <input id="checkin" type="date" class="Checkin" />
+          <input id="checkout" type="date" class="Checkout" />
 
           <img
             src="./ressources/adult.png"
-            style="position: absolute; right: 19%; top: 86%"
+            style="position: absolute; right: 19%; top: 81%"
           />
           <input
             type="number"
+            id="nbradults"
             placeholder="Adults"
             max="10"
             min="0"
@@ -93,11 +94,12 @@
           />
           <img
             src="./ressources/sleeping_room.png"
-            style="position: absolute; right: 4%; top: 86%"
+            style="position: absolute; right: 4%; top: 80%"
             width="32px"
           />
           <input
             type="number"
+            id="nbrrooms"
             placeholder="Rooms"
             max="10"
             min="0"
@@ -106,6 +108,8 @@
           />
         </div>
         <button type="submit" id="Submit">Search</button>
+        <br />
+        <p class="alert" style="display: none">HI</p>
       </div>
     </header>
     <main>
@@ -365,7 +369,7 @@
       </div>
       <div class="container-3">
         <div class="container-31">
-          <form action="action_page">
+          <form id="contactform" action="action_page">
             <div class="row">
               <div class="col-25">
                 <label for="fname">First Name</label>
@@ -762,5 +766,45 @@
         </div>
       </div>
     </footer>
+    <script>
+      var fname = document.getElementById("fname");
+      var subject = document.getElementById("subject");
+      var contactform = document.getElementById("contactform");
+      var search = document.getElementById("search");
+      var alerts = document.getElementsByClassName("alert");
+      var nbradults = document.getElementById("nbradults");
+      var nbrrooms = document.getElementById("nbrrooms");
+      var checkin = document.getElementById("checkin");
+      var checkout = document.getElementById("checkout");
+      var submit = document.getElementById("Submit");
+
+      contactform.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        if (fname.value == "") {
+          alert("Write Your name !");
+        }
+        if (subject.value.length < 10) {
+          alert("Write a valid Message ! ");
+        } else {
+          alert("your message has been sent");
+        }
+      });
+      submit.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (nbradults.value == 0) {
+          alerts[0].innerHTML = "Put a valid number of nights";
+          alerts[0].removeAttribute("style");
+        }
+        if (nbrrooms.value == 0) {
+          alerts[0].innerHTML = "Put a valid number of rooms";
+          alerts[0].removeAttribute("style");
+        }
+        if (checkout.value < checkin.value) {
+          alerts[0].innerHTML = "Check your Dates";
+          alerts[0].removeAttribute("style");
+        }
+      });
+    </script>
   </body>
 </html>
